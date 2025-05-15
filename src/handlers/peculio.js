@@ -1,18 +1,18 @@
-import { sendWithTyping } from '../utils/sendWithTyping.js';
+import { sendWithTyping } from "../utils/sendWithTyping.js";
 
 const opcoesPeculio = {
-  '21': async (chat, msg) => {
-		const texto = `💰 *DEPÓSITO DO SENTENCIADO PARA FAMILIAR:*  
+  21: async (chat, msg) => {
+    const texto = `💰 *DEPÓSITO DO SENTENCIADO PARA FAMILIAR:*  
 O sentenciado deverá encaminhar solicitação ao Setor de Pecúlio, para que seja efetuado depósito em favor de familiar cadastrado no ROL DE VISITAS, devendo ser fornecido dados completos bancários do favorecido, tais como: nome completo, CPF, nº de agência e conta (corrente ou poupança) e valor.
 
 ⚠️ *Atenção:*  
 - Só será permitido o depósito em conta corrente ou poupança do Banco do Brasil (banco vinculado para transações bancárias com a SAP).`;
 
-		await sendWithTyping(chat, msg.from, texto);
-	},
-  
-	'22': async (chat, msg) => {
-		const texto = `🏦 *RETIRADA DE VALORES NA UNIDADE PRISIONAL (PÓS LIBERDADE):*  
+    await sendWithTyping(chat, msg.from, texto);
+  },
+
+  22: async (chat, msg) => {
+    const texto = `🏦 *RETIRADA DE VALORES NA UNIDADE PRISIONAL (PÓS LIBERDADE):*  
 “Para os casos em que os sentenciados foram beneficiados pela progressão de regime ou cumprimento de pena, antes do pagamento da empresa, e possuem condições de receber os valores de forma presencial.”
 
 📋 *Procedimento para retirada:*  
@@ -20,10 +20,10 @@ O sentenciado deverá encaminhar solicitação ao Setor de Pecúlio, para que se
 - Cópia do RG + original;  
 - Entrar em contato com o Setor de Pecúlio via e-mail: *peculio@cdpsor.sap.sp.gov.br* ou telefone *(15) 3335-2303 – Opção 2*, para agendamento da data para retirada na Unidade Prisional.`;
 
-		await sendWithTyping(chat, msg.from, texto);
-	},
-  '23': async (chat, msg) => {
-		const texto = `🏦 *RECEBER DEPÓSITO EM BANCO (PÓS LIBERDADE):*  
+    await sendWithTyping(chat, msg.from, texto);
+  },
+  23: async (chat, msg) => {
+    const texto = `🏦 *RECEBER DEPÓSITO EM BANCO (PÓS LIBERDADE):*  
 “Para os casos em que os sentenciados foram beneficiados pela progressão de regime ou cumprimento de pena, antes do pagamento da empresa, e não possuem condições de receber os valores de forma presencial.”
 
 📋 *Procedimento via e-mail (peculio@cdpsor.sap.sp.gov.br):*  
@@ -33,10 +33,10 @@ O sentenciado deverá encaminhar solicitação ao Setor de Pecúlio, para que se
 - Se a conta for de Terceiro, ela deve constar no ROL DE VISITAS, com documentação em ordem.  
 - No e-mail, mencionar: nome, RG, CPF e dados bancários completos do titular da conta.`;
 
-		await sendWithTyping(chat, msg.from, texto);
-	},
-  '24': async (chat, msg) => {
-		const texto = `💸 *DEPÓSITO NO PECÚLIO POR PIX*  
+    await sendWithTyping(chat, msg.from, texto);
+  },
+  24: async (chat, msg) => {
+    const texto = `💸 *DEPÓSITO NO PECÚLIO POR PIX*  
 Conforme Resolução SAP 56, de 02 de junho de 2022:
 
 ✔️ Permitido somente *01 depósito mensal* por pessoa privada de liberdade;  
@@ -48,8 +48,8 @@ Conforme Resolução SAP 56, de 02 de junho de 2022:
 
 🔑 *Chave PIX*: pixcdpsorocaba@sap.sp.gov.br`;
 
-		await sendWithTyping(chat, msg.from, texto);
-	}
+    await sendWithTyping(chat, msg.from, texto);
+  },
 };
 
 export default opcoesPeculio;

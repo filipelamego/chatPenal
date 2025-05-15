@@ -1,8 +1,8 @@
-import { sendWithTyping } from '../utils/sendWithTyping.js';
+import { sendWithTyping } from "../utils/sendWithTyping.js";
 
 const opcoesSIMIC = {
- '31': async (chat, msg) => {
-		const texto = `🚪 *31 - SAÍDA TEMPORÁRIA*  
+  31: async (chat, msg) => {
+    const texto = `🚪 *31 - SAÍDA TEMPORÁRIA*  
 
 📋 *REQUISITOS EXIGIDOS AO SENTENCIADO:*  
 - Cumprimento de pena em *Regime Semiaberto*;  
@@ -23,10 +23,10 @@ const opcoesSIMIC = {
 - Em nome do sentenciado ou do familiar que será visitado;  
 - Em caso de imóvel alugado: apresentar *declaração padrão emitida pelo proprietário*, com *firma reconhecida em cartório*.`;
 
-		await sendWithTyping(chat, msg.from, texto);
-	},
- '32': async (chat, msg) => {
-		const texto = `💼 *32 - AUXÍLIO RECLUSÃO DO INSS*  
+    await sendWithTyping(chat, msg.from, texto);
+  },
+  32: async (chat, msg) => {
+    const texto = `💼 *32 - AUXÍLIO RECLUSÃO DO INSS*  
 
 📝 *INFORMAÇÕES SOBRE SOLICITAÇÃO DE CERTIDÃO DE RECOLHIMENTO PRISIONAL:*  
 
@@ -46,8 +46,8 @@ cadastro@cdpsor.sap.sp.gov.br
 
 💡 Também pode ser solicitado nos postos da *CAEF* (Centro de Atendimento ao Egresso e Família), órgão ligado à Coordenadoria de Reintegração Social.`;
 
-		await sendWithTyping(chat, msg.from, texto);
-	}
+    await sendWithTyping(chat, msg.from, texto);
+  },
 };
 
 export default opcoesSIMIC;

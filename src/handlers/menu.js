@@ -1,4 +1,4 @@
-import { sendWithTyping } from '../utils/sendWithTyping.js';
+import { sendWithTyping } from "../utils/sendWithTyping.js";
 
 export const getMenuPrincipal = () => `
 📋 *MENU PRINCIPAL*
@@ -14,24 +14,32 @@ export const getMenuPrincipal = () => `
 `;
 
 export const handleGreeting = async (chat, msg) => {
-  await sendWithTyping(chat, msg.from, `🐶 *Olá! Sou o Léo, assistente virtual do CDP Sorocaba.*
+  await sendWithTyping(
+    chat,
+    msg.from,
+    `🐶 *Olá! Sou o Léo, assistente virtual do CDP Sorocaba.*
 
 ⚠️ *Atenção:* Este WhatsApp opera em modo automático.  
 Não acessamos as mensagens e não atendemos ligações realizadas via aplicativo.
-`);
+`
+  );
   await sendWithTyping(chat, msg.from, getMenuPrincipal());
 };
 
-export const isGreeting = text => {
-  const normalized = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  return /\b(dia|tarde|noite|oi|ola|preciso|informacao|ajuda)\b/i.test(normalized);
+export const isGreeting = (text) => {
+  const normalized = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return /\b(dia|tarde|noite|oi|ola|preciso|informacao|ajuda)\b/i.test(
+    normalized
+  );
 };
-
 
 export const handleMainMenu = async (chat, msg, option) => {
   switch (option) {
-    case '1':
-      await sendWithTyping(chat, msg.from, `
+    case "1":
+      await sendWithTyping(
+        chat,
+        msg.from,
+        `
 👥 Visitantes - digite o número correspondente a opção desejada:
 10 - 📅 Calendário de Visitação  
 11 - 👕 Vestuário para Visitantes  
@@ -40,46 +48,66 @@ export const handleMainMenu = async (chat, msg, option) => {
 14 - 📞 Conexão Familiar
 15 - 🪪 Consultar Carteirinha
 16 - 👤 Consultar Detento
-      `);
+      `
+      );
       break;
-    case '2':
-      await sendWithTyping(chat, msg.from, `
+    case "2":
+      await sendWithTyping(
+        chat,
+        msg.from,
+        `
 💰 *PECÚLIO - Digite o número da opção desejada:*  
 
 21 - 🧾 Depósito do Reeducando para Familiar  
 22 - 🏛️ Retirada de Valores na Unidade Prisional (Pós Liberdade)  
 23 - 🏦 Receber Depósito em Banco (Pós Liberdade)  
 24 - 💳 Depósito via PIX
-      `);
+      `
+      );
       break;
-    case '3':
-      await sendWithTyping(chat, msg.from, `
+    case "3":
+      await sendWithTyping(
+        chat,
+        msg.from,
+        `
 📑 *SIMIC - Digite o número da opção desejada:*
 
 31 - 🏃‍♂️ Saída Temporária  
 32 - 💰 Auxílio Reclusão (INSS)
-      `);
+      `
+      );
       break;
-    case '4':
-      await sendWithTyping(chat, msg.from, `
+    case "4":
+      await sendWithTyping(
+        chat,
+        msg.from,
+        `
 🏢 *CRAS - Digite o número da opção desejada:*  
 
 41 - 👶 Reconhecimento de Paternidade  
 42 - 🪦 Óbitos Familiares  
 43 - 🧠 Assistência Social / Psicologia
-      `);
+      `
+      );
       break;
-    case '5':
-      await sendWithTyping(chat, msg.from, `
+    case "5":
+      await sendWithTyping(
+        chat,
+        msg.from,
+        `
 ⚖️ *ADVOGADOS E OFICIAIS DE JUSTIÇA - Digite o número da opção desejada:*  
 
 51 - 🏢 Atendimento Presencial  
 52 - 📞 Agendamento de Teleatendimento  
 53 - 📄 Boletins, Atestados e Grades
-      `);
+      `
+      );
       break;
-    case '6':
-      await sendWithTyping(chat, msg.from, `
+    case "6":
+      await sendWithTyping(
+        chat,
+        msg.from,
+        `
 📞 *TELEFONES E ENDEREÇO*
 
 📱 *Telefones para contato*  
@@ -108,7 +136,8 @@ Aparecidinha - Sorocaba/SP – CEP 18.087-210
 📌 Localização: https://goo.gl/maps/qCTQ2CBJs92mCYww5  
 
 🌐 *Site da SAP:*  
-https://www.sap.sp.gov.br/`);
+https://www.sap.sp.gov.br/`
+      );
       break;
   }
 };
