@@ -71,8 +71,7 @@ export const handleMatricula = async (chat, msg, messageBody) => {
         chat,
         msg.from,
         `⚠️ *Detento não encontrado na unidade.*  
-Verifique se a matrícula está correta ou se o detento foi transferido.  
-Lembre-se: *NÃO DIGITE O DÍGITO, PONTOS OU TRAÇOS!*`
+Verifique se a matrícula está correta ou se o detento foi transferido.*`
       );
     }
   } catch (err) {

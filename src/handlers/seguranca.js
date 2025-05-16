@@ -65,7 +65,8 @@ CEP: 18087-210`,
 Segue o arquivo PDF contendo todas as orientações sobre os itens referentes aos produtos que podem ser enviados via SEDEX.
 
 📦 *Importante:*  
-• É permitida o envio de *01 (uma) caixa por semana*, com *tamanho máximo 05*.  
+• É permitida o envio de *01 (uma) caixa por semana*, com *tamanho máximo 05*.
+• Podem enviar Sedex *somente pessoas devidamente cadastradas no ROL DE VISITAS do detento*. 
 • ❌ Produtos fora dos padrões estipulados *não terão sua entrada permitida*.  
 • ⚠️ *Visitantes que trouxerem o jumbo completo durante os finais de semana* **não poderão enviar SEDEX** naquela mesma semana.
 
