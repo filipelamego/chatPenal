@@ -1,14 +1,14 @@
 import { sendWithTyping } from "../utils/sendWithTyping.js";
 
-export const getMenuPrincipal = () => `
-📋 *MENU PRINCIPAL*
+export const getMenuPrincipal = () => 
+`📋 *MENU PRINCIPAL*
 
 1 - 👥 *Visitantes* (Consultas / Documentações)
-2 - 💰 *Pecúlio* (Depósitos / Retiradas)  
+2 - 💰 *Pecúlio* (Depósitos / Retiradas / Compras)  
 3 - 📄 *SIMIC* (Saída Temporária / Auxílio Reclusão)  
 4 - 📝 *CRAS* (Registros de Paternidade / Óbitos)  
-5 - ⚖️ *Advogados / Oficiais de Justiça*  
-6 - 📞 *Telefones Úteis / Endereço*
+5 - ⚖️ *Advogados e Oficiais de Justiça*  
+6 - 📞 *Telefones Úteis e Endereço*
 
 ℹ️ Digite "menu" para voltar aqui a qualquer momento.
 `;
@@ -17,7 +17,7 @@ export const handleGreeting = async (chat, msg) => {
   await sendWithTyping(
     chat,
     msg.from,
-    `🐶 *Olá! Sou o Léo, assistente virtual do CDP Sorocaba.*
+`🐶 *Olá! Sou o Léo, assistente virtual do CDP Sorocaba.*
 
 ⚠️ *Atenção:* Este WhatsApp opera em modo automático.  
 Não acessamos as mensagens e não atendemos ligações realizadas via aplicativo.
@@ -39,15 +39,16 @@ export const handleMainMenu = async (chat, msg, option) => {
       await sendWithTyping(
         chat,
         msg.from,
-        `
-👥 Visitantes - digite o número correspondente a opção desejada:
+`👥 *VISITANTES - Digite o número da opção desejada:*
+
 10 - 📅 Calendário de Visitação  
 11 - 👕 Vestuário para Visitantes  
 12 - 🧾 Cadastro de Visitantes  
-13 - 📦 Sedex e Cartas  
+13 - 📩 Sedex e Cartas  
 14 - 📞 Conexão Familiar
 15 - 🪪 Consultar Carteirinha
 16 - 👤 Consultar Detento
+17 - 📦 Lista de Jumbo.
       `
       );
       break;
@@ -55,13 +56,13 @@ export const handleMainMenu = async (chat, msg, option) => {
       await sendWithTyping(
         chat,
         msg.from,
-        `
-💰 *PECÚLIO - Digite o número da opção desejada:*  
+`💰 *PECÚLIO - Digite o número da opção desejada:*  
 
 21 - 🧾 Depósito do Reeducando para Familiar  
 22 - 🏛️ Retirada de Valores na Unidade Prisional (Pós Liberdade)  
 23 - 🏦 Receber Depósito em Banco (Pós Liberdade)  
 24 - 💳 Depósito via PIX
+25 - 🛒 Compras via Pecúlio
       `
       );
       break;
@@ -69,8 +70,7 @@ export const handleMainMenu = async (chat, msg, option) => {
       await sendWithTyping(
         chat,
         msg.from,
-        `
-📑 *SIMIC - Digite o número da opção desejada:*
+`📑 *SIMIC - Digite o número da opção desejada:*
 
 31 - 🏃‍♂️ Saída Temporária  
 32 - 💰 Auxílio Reclusão (INSS)
@@ -81,8 +81,7 @@ export const handleMainMenu = async (chat, msg, option) => {
       await sendWithTyping(
         chat,
         msg.from,
-        `
-🏢 *CRAS - Digite o número da opção desejada:*  
+`🏢 *CRAS - Digite o número da opção desejada:*  
 
 41 - 👶 Reconhecimento de Paternidade  
 42 - 🪦 Óbitos Familiares  
@@ -94,8 +93,7 @@ export const handleMainMenu = async (chat, msg, option) => {
       await sendWithTyping(
         chat,
         msg.from,
-        `
-⚖️ *ADVOGADOS E OFICIAIS DE JUSTIÇA - Digite o número da opção desejada:*  
+`⚖️ *ADVOGADOS E OFICIAIS DE JUSTIÇA - Digite o número da opção desejada:*  
 
 51 - 🏢 Atendimento Presencial  
 52 - 📞 Agendamento de Teleatendimento  
@@ -107,8 +105,7 @@ export const handleMainMenu = async (chat, msg, option) => {
       await sendWithTyping(
         chat,
         msg.from,
-        `
-📞 *TELEFONES E ENDEREÇO*
+`📞 *TELEFONES E ENDEREÇO*
 
 📱 *Telefones para contato*  
 *(Antes de ligar, consulte as informações no menu do WhatsApp)*  

@@ -56,15 +56,20 @@ CEP: 18087-210`,
     }
   },
   13: async (chat, msg) => {
-    const media = MessageMedia.fromFilePath("./docs/anexo_II.pdf");
+    const media = MessageMedia.fromFilePath("./docs/Lista_Sedex.pdf");
 
     await sendWithTyping(
       chat,
       msg.from,
-      `📄 *Relação de produtos e alimentos permitidos:*  
-Segue o arquivo PDF contendo todas as orientações sobre os itens referentes à alimentação e jumbo.
+`📄 *SEDEX E CARTAS*  
+Segue o arquivo PDF contendo todas as orientações sobre os itens referentes aos produtos que podem ser enviados via SEDEX.
 
-📬 *Atenção:* Telegramas e/ou cartas registradas *somente poderão ser enviados por pessoas devidamente cadastradas no ROL DE VISITAS do sentenciado.*`
+📦 *Importante:*  
+• É permitida o envio de *01 (uma) caixa por semana*, com *tamanho máximo 05*.  
+• ❌ Produtos fora dos padrões estipulados *não terão sua entrada permitida*.  
+• ⚠️ *Visitantes que trouxerem o jumbo completo durante os finais de semana* **não poderão enviar SEDEX** naquela mesma semana.
+
+📬 *Atenção:* Telegramas e/ou cartas registradas *somente poderão ser enviados por pessoas devidamente cadastradas no ROL DE VISITAS do detento.*`
     );
 
     await chat.sendMessage(media);
@@ -73,8 +78,7 @@ Segue o arquivo PDF contendo todas as orientações sobre os itens referentes à
     await sendWithTyping(
       chat,
       msg.from,
-      `
-📬 *14 - CONEXÃO FAMILIAR*
+`📬 *CONEXÃO FAMILIAR*
 
 🆕 *NOVIDADES DO PROGRAMA CONEXÃO FAMILIAR*
 
@@ -105,6 +109,21 @@ https://www1.sap.sp.gov.br/conexao-familiar.html#top
     );
     awaitingMatricula.add(msg.from);
   },
+  17: async (chat, msg) => {
+    const media = MessageMedia.fromFilePath("./docs/Listagem_Jumbo.pdf");
+
+    await sendWithTyping(
+      chat, 
+      msg.from,
+`📄 *LISTA DE JUMBO*
+
+🧺 *Confira as regras e os itens permitidos para os dias de visitação.*
+
+📌 Todos os itens seguem a *Resolução SAP nº 130, de 14/10/2022.*`
+    );
+
+    await chat.sendMessage(media);
+  }
 };
 
 export default opcoesSeguranca;

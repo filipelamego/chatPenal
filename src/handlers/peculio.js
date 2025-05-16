@@ -50,6 +50,19 @@ Conforme Resolução SAP 56, de 02 de junho de 2022:
 
     await sendWithTyping(chat, msg.from, texto);
   },
+  25: async (chat, msg) => {
+    const texto = `🛒 *COMPRAS VIA PECÚLIO*
+
+🗓️ As compras são realizadas *uma vez por mês*, com base no saldo disponível na conta pecúlio do sentenciado.
+
+📝 Uma folha de compras é encaminhada *todo dia 10* para que o detento possa selecionar os itens que deseja adquirir.
+
+💸 *Atenção:* Para que o valor esteja disponível, os depósitos via *PIX* devem ser realizados *antes do dia 10 de cada mês*.
+
+📌 Os itens são limitados ao saldo e às normas da unidade.`;
+
+    await sendWithTyping(chat, msg.from, texto);
+  }
 };
 
 export default opcoesPeculio;
