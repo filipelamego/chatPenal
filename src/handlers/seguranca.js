@@ -87,11 +87,11 @@ Segue o arquivo PDF contendo todas as orientações sobre os itens referentes ao
 
 ✉️ *Troca de Mensagens Eletrônicas:*  
 Será permitido envio de *01 (uma)* mensagem (e-mail) por mês.  
- O/A visitante receberá por e-mail a confirmação do recebimento pelo reeducando. *NÃO HAVERÁ OUTRA RESPOSTA*, apenas a confirmação do recebimento da mensagem.
+O/A visitante receberá por e-mail a confirmação da entrega do email para o reeducando. 
+⚠️ *NÃO HAVERÁ OUTRA RESPOSTA*, apenas a confirmação do recebimento da mensagem.
 
 🔗 Para mais informações sobre o programa Conexão Familiar, acesse:  
-https://www1.sap.sp.gov.br/conexao-familiar.html#top
-	`
+https://www1.sap.sp.gov.br/conexao-familiar.html#top`
     );
   },
   15: async (chat, msg) => {
