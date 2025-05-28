@@ -2,10 +2,18 @@ import pkg from "whatsapp-web.js";
 const { MessageMedia } = pkg;
 import { sendWithTyping } from "../utils/sendWithTyping.js";
 import { awaitingCPF, awaitingMatricula } from "../utils/state.js";
+import path from "path";
+
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const opcoesSeguranca = {
   10: async (chat, msg) => {
-    const media = MessageMedia.fromFilePath("./docs/calendario_visita.pdf");
+    const mediaPath = path.join(__dirname, '..', '..', 'docs', 'calendario_visita.pdf');
+    const media = MessageMedia.fromFilePath(mediaPath);
     await sendWithTyping(chat, msg.from, "📄 CALENDÁRIO DE VISITAÇÃO:");
     await chat.sendMessage(media);
   },
@@ -56,7 +64,8 @@ CEP: 18087-210`,
     }
   },
   13: async (chat, msg) => {
-    const media = MessageMedia.fromFilePath("./docs/Lista_Sedex.pdf");
+    const mediaPath = path.join(__dirname, '..', '..', 'docs', 'Lista_Sedex.pdf');
+    const media = MessageMedia.fromFilePath(mediaPath);
 
     await sendWithTyping(
       chat,
@@ -111,7 +120,8 @@ https://www1.sap.sp.gov.br/conexao-familiar.html#top`
     awaitingMatricula.add(msg.from);
   },
   17: async (chat, msg) => {
-    const media = MessageMedia.fromFilePath("./docs/Listagem_Jumbo.pdf");
+    const mediaPath = path.join(__dirname, '..', '..', 'docs', 'Listagem_Jumbo.pdf');
+    const media = MessageMedia.fromFilePath(mediaPath);
 
     await sendWithTyping(
       chat, 
