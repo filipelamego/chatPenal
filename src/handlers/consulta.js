@@ -73,7 +73,7 @@ try {
        FROM mov_sent
        WHERE LEFT(Matric_Mov, LENGTH(Matric_Mov) - 1) = ?
        AND Tipo_Mov = 'ER'
-       ORDER BY Data_Mov DESC
+       ORDER BY Data_Out_Mov DESC
        LIMIT 1`,
       [messageBody]
     );
