@@ -47,39 +47,61 @@ export const handleMatricula = async (chat, msg, messageBody) => {
   // Finaliza o estado de "aguardando matrícula" para esse usuário
   awaitingMatricula.delete(msg.from);
 
-  try {
-    const [rows] = await pool.execute(
-      `SELECT Pav_Cel, Cela_Cel FROM celas 
-       WHERE LEFT(Matric_Cel, LENGTH(Matric_Cel) - 1) = ? 
-       AND Dl_Cel = '+' 
-       AND Fim_Cel IS NULL 
+try {
+  const [rows] = await pool.execute(
+    `SELECT Pav_Cel, Cela_Cel FROM celas 
+     WHERE LEFT(Matric_Cel, LENGTH(Matric_Cel) - 1) = ? 
+     AND Dl_Cel = '+' 
+     AND Fim_Cel IS NULL 
+     LIMIT 1`,
+    [messageBody]
+  );
+
+  if (rows.length > 0) {
+    const preso = rows[0];
+    await sendWithTyping(
+      chat,
+      msg.from,
+      `✅ *Detento encontrado:*  
+📌 *Ala:* ${preso.Pav_Cel}  
+📌 *Cela:* ${preso.Cela_Cel}`
+    );
+  } else {
+    // Verifica para onde o detento foi transferido
+    const [transferido] = await pool.execute(
+      `SELECT Proc_Destino_Mov
+       FROM mov_sent
+       WHERE LEFT(Matric_Mov, LENGTH(Matric_Mov) - 1) = ?
+       AND Tipo_Mov = 'ER'
+       ORDER BY Data_Mov DESC
        LIMIT 1`,
       [messageBody]
     );
 
-    if (rows.length > 0) {
-      const preso = rows[0];
+    if (transferido.length > 0) {
+      const destino = transferido[0];
       await sendWithTyping(
         chat,
         msg.from,
-        `✅ *Detento encontrado:*  
-📌 *Ala:* ${preso.Pav_Cel}  
-📌 *Cela:* ${preso.Cela_Cel}`
+        `⚠️ *Detento não encontrado na unidade.*  
+O detento foi transferido para: *${destino.Proc_Destino_Mov}*`
       );
     } else {
       await sendWithTyping(
         chat,
         msg.from,
         `⚠️ *Detento não encontrado na unidade.*  
-Verifique se a matrícula está correta ou se o detento foi transferido.*`
+Verifique se a matrícula está correta ou se o detento foi transferido.`
       );
     }
-  } catch (err) {
-    console.error("Erro ao consultar detento:", err);
-    await sendWithTyping(
-      chat,
-      msg.from,
-      "❌ Ocorreu um erro ao consultar o detento. Tente novamente mais tarde."
-    );
   }
+} catch (err) {
+  console.error("Erro ao consultar detento:", err);
+  await sendWithTyping(
+    chat,
+    msg.from,
+    "❌ Ocorreu um erro ao consultar o detento. Tente novamente mais tarde."
+  );
+}
+
 };
